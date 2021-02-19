@@ -172,6 +172,7 @@ header {
 .search:focus {
   outline: none;
   background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 /* The following code was used to build the "above the fold" section of my website: */
@@ -262,6 +263,99 @@ h1 {
    margin-top: 50px;
 }
 
+/* Below is the code for the cards for the recipes:  */
+#cards-container {
+  display: flex;
+}
+
+img {
+  max-width: 100%;
+}
+
+.card {
+  margin-left: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 350px;
+  background-color: rgb(218, 209, 209);
+}
+
+.card-header {
+  height: 200px;
+  background-color: rgb(218, 209, 209);
+}
+
+.card-header img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card-content {
+  background-color: #fff;
+  padding: 30px;
+  background-color: rgb(218, 209, 209);
+}
+
+.card-title {
+  height: 20px;
+  margin: 0;
+}
+
+.card-excerpt {
+  color: #777;
+  margin: 10px 0 20px;
+}
+
+.info {
+  display: flex;
+}
+
+.recipe-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 10px;
+  width: 100px;
+}
+
+.recipe-info small {
+  color: #aaa;
+  margin-top: 5px;
+}
+
+.animated-bg {
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 10%,
+    #f6f7f8 20%,
+    #f6f7f8 100%
+  );
+  background-size: 200% 100%;
+  animation: bgPos 1s linear infinite;
+}
+
+.animated-bg-text {
+  border-radius: 50px;
+  display: inline-block;
+  margin: 0;
+  height: 10px;
+  width: 100%;
+}
+
+@keyframes bgPos {
+  0% {
+    background-position: 50% 0;
+  }
+
+  100% {
+    background-position: -150% 0;
+  }
+}
+/* Here finishes the code for the cards for the recipes */
 
 /* Below are the media queries for the nav bar */
 @media (max-width: 600px) {
