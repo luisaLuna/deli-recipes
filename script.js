@@ -43,26 +43,56 @@ function writeText() {
 }
 // Here finishes the code for the animation on the h1 text.
 
-// Below is the code for the card recipes:
+// Below is the code for the API:
 
-const header = document.getElementById('header')
-const title = document.getElementById('title')
-const excerpt = document.getElementById('excerpt')
-const name = document.getElementById('name')
-const date = document.getElementById('date')
+const APIURL = 'https://api.spoonacular.com/recipes/random?apiKey=2467e20a349e4da1a996db77043636d6&number=10';
 
-const animated_bgs = document.querySelectorAll('.animated-bg')
-const animated_bg_texts = document.querySelectorAll('.animated-bg-text')
+const cardsContainer = document.getElementById('cards-container');
 
-setTimeout(getData, 2000)
+getRecipes()
 
-function getData() {
-    header.innerHTML = ' <img src="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Food"> ';
-    title.innerHTML = 'This is a deli recipe';
-    excerpt.innerHTML = ' This is the info of the recipe.';
-    name.innerHTML = 'Calories 100'; 
-    date.innerHTML = 'Time 20-min'; 
+async function getRecipes() {
+    try { 
+        const res = await axios(APIURL);
+        
+        createRecipeCard(res.data.recipes)
 
-  animated_bgs.forEach((bg) => bg.classList.remove('animated-bg'))
-  animated_bg_texts.forEach((bg) => bg.classList.remove('animated-bg-text'))
+    } catch(err) {
+        console.log(err);
+    }
+    
 }
+
+function createRecipeCard(recipes) {
+    recipes.forEach((recipe) => {
+        const { title, image, summary, readyInMinutes } = recipe 
+
+        const cardHTML = `
+    <div class="card">
+    <div class="card-header" id="header">
+    <img src="${image}" alt="${title}">
+    </div>
+    <div class="card-content">
+        <h3 class="card-title" id="title">
+        ${title}
+        </h3>
+        <p class="card-excerpt" id="excerpt">
+    
+        </p>
+        <div class="info">
+            <div class="recipe-info">
+                <strong id="name">Calories 100</strong>
+                <small id="date">Time: ${readyInMinutes} Minutes</small>
+            </div>
+        </div>
+    </div>
+    <button id="btn-recipe">View Recipe</button>
+</div>
+    `
+   cardsContainer.innerHTML = cardHTML; 
+    })
+    
+   
+}
+
+createRecipeCard()

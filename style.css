@@ -57,13 +57,13 @@ html {
 }
 
 * {
-  overflow: hidden;
-box-sizing: border-box;
+ overflow: hidden;
+ box-sizing: border-box;
 }
 
 body {
   text-align: center;
-   font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Below is the code for the nav bar: */
@@ -96,7 +96,6 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   color: var(--secondary-color);
-  /* color: rgb(185, 176, 176); */
   padding: 16px;
 }
 
@@ -189,7 +188,6 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  background-color: #001233;
   height: 100vh;
   color: #fff;
   display: flex;
@@ -221,7 +219,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Merriweather', sans-serif;
   font-size: calc(2.8rem + 0.9vw);
   line-height: 1.2;
   margin-bottom: 20px;
@@ -232,6 +229,7 @@ h1 {
    max-width: 900px;
    font-weight: 700;
    margin-top: 50px;
+   font-family: 'Poppins', sans-serif;
 }
 
 /* Here finishes the code used to build the "above the fold" section.  */
@@ -240,6 +238,7 @@ h1 {
 
 #cards-container {
   display: flex;
+  justify-content: center;
 }
 
 img {
@@ -248,6 +247,7 @@ img {
 
 .card {
   margin-left: 20px;
+  margin-right: 20px;
   margin-top: 20px;
   margin-bottom: 0px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -275,6 +275,7 @@ img {
   padding-top: 30px;
   padding-bottom: 30px;
   background-color: rgb(218, 209, 209);
+  font-family: 'Poppins', sans-serif;
 }
 
 .card-title {
@@ -296,9 +297,6 @@ img {
   margin-top: 10px;
   margin-left: 0px;
 }
-.card-excerpt p {
-  margin: 0px;
-}
 
 .info {
   display: flex;
@@ -316,8 +314,26 @@ img {
 }
 
 .recipe-info small {
-  color: #aaa;
+  color: #777;
   margin-top: 10px;
+}
+
+#btn-recipe {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  width: 150px;
+  letter-spacing: .08rem;
+}
+
+#btn-recipe:hover {
+  background-color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
 }
 
 .animated-bg {
