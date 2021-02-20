@@ -45,7 +45,7 @@ function writeText() {
 
 // Below is the code for the API:
 
-const APIURL = 'https://api.spoonacular.com/recipes/random?apiKey=2467e20a349e4da1a996db77043636d6&number=10&tags=vegetarian,dessert';
+const APIURL = 'https://api.spoonacular.com/recipes/random?apiKey=2467e20a349e4da1a996db77043636d6&number=10&tags=vegetarian,dessert,veryPopular';
 
 const cardsContainer = document.getElementById('cards-container');
 
@@ -65,7 +65,7 @@ async function getRecipes() {
 
 function createRecipeCard(recipes) {
     recipes.forEach((recipe) => {
-        const { title, image, summary, readyInMinutes } = recipe 
+        const { title, image, summary, readyInMinutes, diets} = recipe 
 
         const cardHTML = `
     <div class="card">
@@ -77,13 +77,10 @@ function createRecipeCard(recipes) {
         ${title}
         </h3>
         <p class="card-excerpt" id="excerpt">
-    
+        ${diets}
         </p>
         <div class="info">
-            <div class="recipe-info">
-                <strong id="name">Calories 100</strong>
                 <small id="date">Time: ${readyInMinutes} Minutes</small>
-            </div>
         </div>
     </div>
     <button id="btn-recipe">View Recipe</button>
