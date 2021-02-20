@@ -67,8 +67,10 @@ function createRecipeCard(recipes) {
     recipes.forEach((recipe) => {
         const { title, image, summary, readyInMinutes, diets} = recipe 
 
-        const cardHTML = `
-    <div class="card">
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        card.innerHTML = `
     <div class="card-header" id="header">
     <img src="${image}" alt="${title}">
     </div>
@@ -84,12 +86,9 @@ function createRecipeCard(recipes) {
         </div>
     </div>
     <button id="btn-recipe">View Recipe</button>
-</div>
     `
-   cardsContainer.innerHTML = cardHTML; 
+        cardsContainer.append(card);
     })
     
    
 }
-
-createRecipeCard()
