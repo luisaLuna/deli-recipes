@@ -85,7 +85,7 @@ function createRecipeCard(recipes) {
         <small id="date">Time: ${readyInMinutes} Minutes</small>
         </div>
     </div>
-    <a href="${spoonacularSourceUrl}" target="_blank">View Recipe</a>
+    <a href="${spoonacularSourceUrl}" target="_blank" id="btn-recipe">View Recipe</a>
     `
         cardsContainer.append(card);
     })
