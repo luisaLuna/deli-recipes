@@ -45,7 +45,7 @@ function writeText() {
 
 // Below is the code for the API:
 
-const APIURL = 'https://api.spoonacular.com/recipes/random?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=9&tags=vegetarian,dessert,veryPopular';
+const APIURL = 'https://api.spoonacular.com/recipes/random?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=5&tags=vegetarian,dessert,veryPopular';
 
 const cardsContainer = document.getElementById('cards-container');
 
@@ -85,7 +85,9 @@ function createRecipeCard(recipes) {
         <small id="date">Time: ${readyInMinutes} Minutes</small>
         </div>
     </div>
+    <div id="btn-container">
     <a href="${spoonacularSourceUrl}" target="_blank" id="btn-recipe">View Recipe</a>
+    </div>
     `
         cardsContainer.append(card);
     })
