@@ -1,0 +1,67 @@
+// Below is the code for make the nav bar responsive:
+const toggleButton = document.getElementsByClassName('toggle-button')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+toggleButton.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active')
+})
+
+// Below is the code to make the navbar appear and disappear when scrolling:
+const nav = document.querySelector('.navbar')
+let lastScrollTop = 0; 
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+       nav.classList.add('active')
+    } else {
+        nav.classList.remove('active')
+     }
+      
+    lastScrollTop = scrollTop; 
+})
+// Here finishes the code for the nav bar.
+
+// Below is the code for the API:
+
+const API_URL_MEX = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=9&cuisine=mexican';
+const APIURL = 'https://api.spoonacular.com/recipes/random?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=1';
+
+const cardsContainer = document.getElementById('cards-container');
+
+getRecipes(API_URL_MEX)
+
+async function getRecipes(url) {
+    try { 
+        const res = await axios(API_URL_MEX);
+        
+        createRecipeCard(res.data.results)
+
+    } catch(err) {
+        console.log(err);
+    }
+    
+}
+
+function createRecipeCard(results) {
+    results.forEach((result) => {
+        const { title, image, readyInMinutes, diets, spoonacularSourceUrl } = result 
+
+        const card = document.createElement('div');
+        card.classList.add('card','mexican');
+
+        card.innerHTML = `
+    <div class="card-header" id="header">
+    <img src="${image}" alt="${title}">
+    </div>
+    <div class="card-content">
+        <h3 class="card-title mexican" id="title">
+        ${title}
+        </h3>
+    </div>
+    <div id="btn-container">
+    <a href="${spoonacularSourceUrl}" target="_blank" id="btn-recipe">View Recipe</a>
+    </div>
+    `
+        cardsContainer.append(card);
+    })
+}

@@ -395,6 +395,21 @@ img {
 }
 /* Here finishes the code for the cards for the recipes */
 
+/* Below is the code for the Mexican page: */
+.mexican-h1 {
+  color: var(--primary-color);
+  margin-top: 100px;
+}
+.card.mexican {
+  margin-top: 50px;
+}
+
+.card-title.mexican {
+  height: 65px;
+}
+
+/* Here finishes the code for the Mexican page */
+
 /* Below are the media queries: */ 
 
 @media (max-width: 600px) {
