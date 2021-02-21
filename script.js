@@ -45,7 +45,7 @@ function writeText() {
 
 // Below is the code for the API:
 
-const APIURL = 'https://api.spoonacular.com/recipes/random?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=9&tags=dessert,veryPopular';
+const APIURL = 'https://api.spoonacular.com/recipes/random?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=1';
 
 const cardsContainer = document.getElementById('cards-container');
 
@@ -93,27 +93,37 @@ function createRecipeCard(recipes) {
     })
 }
 
+const API_URL_MEX = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=1&cuisine=mexican'
+
+
+
+
+
+
 // Here finishes the code for displaying random recipes on the cards
+
+
+
 
 // Below is the code to search and display recipes: 
 
-const SEARCH_API = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=1&query='
+// const SEARCH_API = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=1&query='
 
-const form = document.getElementById('form');
-const search = document.getElementById('search');
-let searchTerm = "";
+// const form = document.getElementById('form');
+// const search = document.getElementById('search');
+// let searchTerm = "";
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
+// form.addEventListener('submit', (e) => {
+//     e.preventDefault()
 
-    searchTerm = search.value;
+//     searchTerm = search.value;
     
 
-    if(searchTerm && searchTerm !== '') {
-        getRecipes(SEARCH_API + searchTerm)
+//     if(searchTerm && searchTerm !== '') {
+//         getRecipes(SEARCH_API + searchTerm)
 
-        search.value = ''
-    } else {
-        window.location.reload()
-    }
-})
+//         search.value = ''
+//     } else {
+//         window.location.reload()
+//     }
+// })

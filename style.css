@@ -160,7 +160,7 @@ header {
   justify-content: flex-end;
   background-color: var(--secondary-color);
 }
-
+/* 
 .search {
   background-color: var(--secondary-color);
   border: 2px solid var(--secondary-color);
@@ -180,7 +180,7 @@ header {
   outline: none;
   background-color: var(--primary-color);
   border-color: var(--primary-color);
-}
+} */
 
 /* The following code was used to build the "above the fold" section of my website: */
 .hero {
@@ -442,7 +442,7 @@ img {
   width: 100%;
   margin: 10px auto;
 }
-.form-container {
+/* .form-container {
   display: flex;
   margin: 0 auto; 
   margin-top: 10px;
@@ -452,7 +452,7 @@ img {
   margin: 0 auto; 
   font-size: 1.2rem;
   letter-spacing: .05rem;
-}
+} */
 
 }
 
