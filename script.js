@@ -45,15 +45,15 @@ function writeText() {
 
 // Below is the code for the API:
 
-const APIURL = 'https://api.spoonacular.com/recipes/random?apiKey=2467e20a349e4da1a996db77043636d6&number=9&tags=vegetarian,dessert,veryPopular';
+const APIURL = 'https://api.spoonacular.com/recipes/random?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=9&tags=vegetarian,dessert,veryPopular';
 
 const cardsContainer = document.getElementById('cards-container');
 
-getRecipes()
+getRecipes(APIURL)
 
-async function getRecipes() {
+async function getRecipes(url) {
     try { 
-        const res = await axios(APIURL);
+        const res = await axios(url);
         
         createRecipeCard(res.data.recipes)
 
@@ -79,7 +79,7 @@ function createRecipeCard(recipes) {
         ${title}
         </h3>
         <p class="card-excerpt" id="excerpt">
-        ${diets}
+        Tags: ${diets}
         </p>
         <div class="info">
         <small id="date">Time: ${readyInMinutes} Minutes</small>
@@ -89,6 +89,29 @@ function createRecipeCard(recipes) {
     `
         cardsContainer.append(card);
     })
-    
-   
 }
+
+// Here finishes the code for displaying random recipes on the cards
+
+// Below is the code to search and display recipes: 
+
+const SEARCH_API = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=1&query='
+
+const form = document.getElementById('form');
+const search = document.getElementById('search');
+let searchTerm = "";
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    searchTerm = search.value;
+    
+
+    if(searchTerm && searchTerm !== '') {
+        getRecipes(SEARCH_API + searchTerm)
+
+        search.value = ''
+    } else {
+        window.location.reload()
+    }
+})

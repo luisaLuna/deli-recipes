@@ -161,7 +161,7 @@ header {
   background-color: var(--secondary-color);
 }
 
-/* .search {
+.search {
   background-color: var(--secondary-color);
   border: 2px solid var(--secondary-color);
   border-radius: 50px;
@@ -180,7 +180,7 @@ header {
   outline: none;
   background-color: var(--primary-color);
   border-color: var(--primary-color);
-} */
+}
 
 /* The following code was used to build the "above the fold" section of my website: */
 .hero {
