@@ -45,7 +45,7 @@ function writeText() {
 
 // Below is the code for the API:
 
-const APIURL = 'https://api.spoonacular.com/recipes/random?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=1';
+const APIURL = 'https://api.spoonacular.com/recipes/random?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=9';
 
 const cardsContainer = document.getElementById('cards-container');
 
@@ -93,17 +93,7 @@ function createRecipeCard(recipes) {
     })
 }
 
-const API_URL_MEX = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=1&cuisine=mexican'
-
-
-
-
-
-
 // Here finishes the code for displaying random recipes on the cards
-
-
-
 
 // Below is the code to search and display recipes: 
 
