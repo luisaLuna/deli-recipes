@@ -79,7 +79,7 @@ function createRecipeCard(recipes) {
         ${title}
         </h3>
         <p class="card-excerpt" id="excerpt">
-        Tags: ${diets}
+        ${diets}
         </p>
         <div class="info">
         <small id="date">Time: ${readyInMinutes} Minutes</small>

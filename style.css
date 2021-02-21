@@ -279,6 +279,7 @@ img {
   margin-bottom: 0px;
   background-color: rgb(218, 209, 209);
   font-family: 'Poppins', sans-serif;
+  line-height: 1.2;
 }
 
 .card-title {
@@ -292,7 +293,8 @@ img {
   height: 55px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .card-excerpt {
@@ -315,7 +317,9 @@ img {
   margin-top: 0px;
   margin-left: 0px;
   color: rgb(87, 83, 83);
+  line-height: 1.5;
 }
+
 
 .recipe-info {
   display: flex;
@@ -437,6 +441,17 @@ img {
 .card {
   width: 100%;
   margin: 10px auto;
+}
+.form-container {
+  display: flex;
+  margin: 0 auto; 
+  margin-top: 10px;
+}
+
+#search {
+  margin: 0 auto; 
+  font-size: 1.2rem;
+  letter-spacing: .05rem;
 }
 
 }
