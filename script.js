@@ -51,25 +51,38 @@ const cardsContainer = document.getElementById('cards-container');
 
 getRecipes(APIURL)
 
+// First, we create our async function to get the data from our API:
 async function getRecipes(url) {
-    try { 
+
+    // We use try/catch to handle errors: 
+    try {  
+        // We use the the below code to GET the data with axios from the API: 
         const res = await axios(url);
         
+        // With the data that we received, we are going to call another function that will add that data to the html body:
         createRecipeCard(res.data.recipes)
 
-    } catch(err) {
+    } catch (err) {
+        //  If there is an error with our API, we will console.log the error 
         console.log(err);
     }
     
 }
 
-function createRecipeCard(recipes) {
+// This is the second function which adds the data from the API to our 'divs' that display the cards:
+function createRecipeCard(recipes) { 
+
+    // We use a forEach() method that executes a function once for each array element: 
     recipes.forEach((recipe) => {
         const { title, image, summary, readyInMinutes, diets, spoonacularSourceUrl } = recipe 
 
+        // We create a div that will containt the data: 
         const card = document.createElement('div');
+
+        // We add it a class:
         card.classList.add('card');
 
+ // We insert the data to its html, we use backticks and ${} to insert for example the "image" that we got from the API
         card.innerHTML = `
     <div class="card-header" id="header">
     <img src="${image}" alt="${title}">
@@ -89,9 +102,12 @@ function createRecipeCard(recipes) {
     <a href="${spoonacularSourceUrl}" target="_blank" id="btn-recipe">View Recipe</a>
     </div>
     `
+        // We append the divs that we are creating to the container 
         cardsContainer.append(card);
     })
 }
+
+// Now, after we call the function "getRecipes(APIURL)", we will have the information from the API displaying on our page. 
 
 // Here finishes the code for displaying random recipes on the cards
 
