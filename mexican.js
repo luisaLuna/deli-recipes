@@ -23,7 +23,8 @@ window.addEventListener('scroll', function() {
 
 // Below is the code for the API:
 
-const API_URL_MEX = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=9&cuisine=mexican';
+// const API_URL_MEX = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=9&cuisine=mexican';
+const API_URL_MEX = 'https://api.spoonacular.com/recipes/random?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=9&tags=mexican';
 const APIURL = 'https://api.spoonacular.com/recipes/random?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=1';
 
 const cardsContainer = document.getElementById('cards-container');
@@ -34,7 +35,7 @@ async function getRecipes(url) {
     try { 
         const res = await axios(API_URL_MEX);
         
-        createRecipeCard(res.data.results)
+        createRecipeCard(res.data.recipes)
 
     } catch(err) {
         console.log(err);
@@ -42,9 +43,9 @@ async function getRecipes(url) {
     
 }
 
-function createRecipeCard(results) {
-    results.forEach((result) => {
-        const { title, image, readyInMinutes, diets, spoonacularSourceUrl } = result 
+function createRecipeCard(recipes) {
+    recipes.forEach((recipe) => {
+        const { title, image, readyInMinutes, diets, spoonacularSourceUrl } = recipe 
 
         const card = document.createElement('div');
         card.classList.add('card','mexican');
