@@ -58,6 +58,12 @@ function createRecipeCard(recipes) {
         <h3 class="card-title mexican" id="title">
         ${title}
         </h3>
+        <p class="card-excerpt" id="excerpt">
+        ${diets}
+        </p>
+        <div class="info">
+        <small id="date">Time: ${readyInMinutes} Minutes</small>
+        </div>
     </div>
     <div id="btn-container">
     <a href="${spoonacularSourceUrl}" target="_blank" id="btn-recipe">View Recipe</a>
