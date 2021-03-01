@@ -23,7 +23,7 @@ window.addEventListener('scroll', function() {
 
 // Below is the code for the API:
 
-const API_URL_VEG = 'https://api.spoonacular.com/recipes/random?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=9&tags=vegetarian';
+const API_URL_VEG = 'https://api.spoonacular.com/recipes/random?apiKey=fdb84c6009cf4bd5b9314e9ee9c623f2&number=21&tags=vegetarian';
 
 
 const cardsContainer = document.getElementById('cards-container');
